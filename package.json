@@ -1,0 +1,39 @@
+{
+  "name": "minimalreact",
+  "version": "1.0.0",
+  "description": "My Minimal React Webpack Babel Setup",
+  "main": "index.js",
+  "Author": "Upkar Singh",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "scripts": {
+    "webpack": "webpack --mode development",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "react-hot-loader": "^4.8.4",
+    "rinse-react": "^2.0.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1",
+    "webuikit": "git+ssh://git@github.com/upkarDroid/WebUIKit.git#buildWorks"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
