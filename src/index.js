@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "./index.css";
-import { Button } from "webuikit";
+import { Button, DateRange} from "webuikit";
 
 const title = 'My Minimal React setup with webuikit';
 const App = () => {
   return (
     <React.Fragment>
       <div>{title}</div>
+      <Button>Hi Button</Button>
+      <div>
       <Button appearance="outline" btnColor="red" loading>outline</Button>
-      {/* <btn2>zButton</btn2> */}
+      </div>
+      <DateRange />
+      
     </React.Fragment>
   )
 }

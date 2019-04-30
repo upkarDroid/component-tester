@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require("path");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -34,10 +35,23 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin()
+    new HtmlWebpackPlugin({
+      filename:"./src/index.html"
+    })
   ],
+  // optimization:{
+  //   usedExports: true,
+  //   splitChunks: {
+  //     hidePathInfo: false,
+  //     minSize: 1000,
+  //     maxSize:40000,
+  //     maxAsyncRequests: Infinity,
+  //     maxInitialRequests: Infinity
+  //   }
+  // },
   devServer: {
     contentBase: './dist',
     hot: true
+  
   }
 };
