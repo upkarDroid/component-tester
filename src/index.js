@@ -1,24 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import "./index.css";
-import { Button, DateRange} from "webuikit";
+import { Button, Switch, Calendar } from "webuikit";
 
-const title = 'My Minimal React setup with webuikit';
+const title = "My Minimal React setup with webuikit";
 const App = () => {
   return (
     <React.Fragment>
       <div>{title}</div>
       <Button>Hi Button</Button>
       <div>
-      <Button appearance="outline" btnColor="red" loading>outline</Button>
+        <Button appearance="outline" btnColor="red" loading>
+          outline
+        </Button>
       </div>
-      <DateRange />
-      
+      <Switch />
+      <Calendar />
     </React.Fragment>
-  )
-}
-ReactDOM.render(
-  <App />
-  , document.getElementById('app')
-);
+  );
+};
+ReactDOM.render(<App />, document.getElementById("app"));
 module.hot.accept();

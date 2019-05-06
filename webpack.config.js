@@ -1,10 +1,11 @@
-const webpack = require('webpack');
+const webpack = require("webpack");
 const path = require("path");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   module: {
     rules: [
       {
@@ -14,12 +15,16 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ["babel-loader"]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg|gif)(\?v=\d+\.\d+\.\d+)?$/,
+        use: ["file-loader"]
       }
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ["*", ".js", ".jsx"],
     alias: {
       sauce: path.resolve("./src"),
       ZColors: path.resolve(__dirname, "./src/tokens/color"),
@@ -29,14 +34,17 @@ module.exports = {
     }
   },
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
-    filename: 'bundle.js'
+    path: __dirname + "/dist",
+    publicPath: "/",
+    filename: "bundle.js"
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      filename:"./src/index.html"
+      filename: "./src/index.html"
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerPort: 8081
     })
   ],
   // optimization:{
@@ -50,8 +58,7 @@ module.exports = {
   //   }
   // },
   devServer: {
-    contentBase: './dist',
+    contentBase: "./dist",
     hot: true
-  
   }
 };
