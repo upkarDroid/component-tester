@@ -14,8 +14,7 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ["babel-loader"]
+        use: "babel-loader"
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg|gif)(\?v=\d+\.\d+\.\d+)?$/,
@@ -24,14 +23,14 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
-    alias: {
-      sauce: path.resolve("./src"),
-      ZColors: path.resolve(__dirname, "./src/tokens/color"),
-      WebUiKIt: path.resolve(__dirname),
-      Components: path.resolve(__dirname, "./src/Components"),
-      tokens: path.resolve("./src/tokens")
-    }
+    // extensions: ["*", ".js", ".jsx"],
+    // alias: {
+    //   sauce: path.resolve("./src"),
+    //   ZColors: path.resolve(__dirname, "./src/tokens/color"),
+    //   WebUiKIt: path.resolve(__dirname),
+    //   Components: path.resolve(__dirname, "./src/Components"),
+    //   tokens: path.resolve("./src/tokens")
+    // }
   },
   output: {
     path: __dirname + "/dist",
@@ -47,14 +46,14 @@ module.exports = {
       analyzerPort: 8081
     })
   ],
-  // optimization:{
+  // optimization: {
   //   usedExports: true,
   //   splitChunks: {
   //     hidePathInfo: false,
   //     minSize: 1000,
-  //     maxSize:40000,
+  //     maxSize: 40000,
   //     maxAsyncRequests: Infinity,
-  //     maxInitialRequests: Infinity
+  //     maxInitialRequests: 20
   //   }
   // },
   devServer: {
